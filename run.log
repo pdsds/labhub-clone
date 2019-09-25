@@ -1,0 +1,80 @@
+thread 'main' panicked at 'Unable to open the file: Os { code: 2, kind: NotFound, message: "No such file or directory" }', src/libcore/result.rs:1165:5
+stack backtrace:
+   0:     0x55b9a7cd6304 - backtrace::backtrace::libunwind::trace::hcb65989b4e5244e1
+                               at /cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/libunwind.rs:88
+   1:     0x55b9a7cd6304 - backtrace::backtrace::trace_unsynchronized::haa6a9d9effa2485d
+                               at /cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/mod.rs:66
+   2:     0x55b9a7cd6304 - std::sys_common::backtrace::_print_fmt::h2d7a184129d7c356
+                               at src/libstd/sys_common/backtrace.rs:76
+   3:     0x55b9a7cd6304 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h6c5bc5bc9c2127ff
+                               at src/libstd/sys_common/backtrace.rs:60
+   4:     0x55b9a7cf999c - core::fmt::write::ha8d08e448ccdeba2
+                               at src/libcore/fmt/mod.rs:1030
+   5:     0x55b9a7cd0e47 - std::io::Write::write_fmt::he7dc7ed15035f43c
+                               at src/libstd/io/mod.rs:1412
+   6:     0x55b9a7cd8ea5 - std::sys_common::backtrace::_print::hbf241e428e8a6729
+                               at src/libstd/sys_common/backtrace.rs:64
+   7:     0x55b9a7cd8ea5 - std::sys_common::backtrace::print::h9e5e6208b04d7bab
+                               at src/libstd/sys_common/backtrace.rs:49
+   8:     0x55b9a7cd8ea5 - std::panicking::default_hook::{{closure}}::h4a4825ea2bc9875c
+                               at src/libstd/panicking.rs:196
+   9:     0x55b9a7cd8b96 - std::panicking::default_hook::h0775a209ebe783e0
+                               at src/libstd/panicking.rs:210
+  10:     0x55b9a7cd95a5 - std::panicking::rust_panic_with_hook::h170397504511b368
+                               at src/libstd/panicking.rs:473
+  11:     0x55b9a7cd9142 - std::panicking::continue_panic_fmt::he90e9898634797a1
+                               at src/libstd/panicking.rs:380
+  12:     0x55b9a7cd9036 - rust_begin_unwind
+                               at src/libstd/panicking.rs:307
+  13:     0x55b9a7cf609a - core::panicking::panic_fmt::h809f4291977038d0
+                               at src/libcore/panicking.rs:85
+  14:     0x55b9a7cf6197 - core::result::unwrap_failed::h0945b86941e78082
+                               at src/libcore/result.rs:1165
+  15:     0x55b9a6ba9318 - core::result::Result<T,E>::expect::h89af50a4fec10c79
+                               at /rustc/7efe1c6e678a263b9464f2e7f06f552b4d4db5a5/src/libcore/result.rs:960
+  16:     0x55b9a6b352ed - labhub::config::read_file_to_string::hd4a17f5dc6d66942
+                               at src/config.rs:83
+  17:     0x55b9a6b6b853 - <labhub::config::CONFIG as core::ops::deref::Deref>::deref::__static_ref_initialize::hd7ed0065fe50e444
+                               at src/config.rs:77
+  18:     0x55b9a6b6b853 - core::ops::function::FnOnce::call_once::hbbfb6671c579ccb8
+                               at /rustc/7efe1c6e678a263b9464f2e7f06f552b4d4db5a5/src/libcore/ops/function.rs:227
+  19:     0x55b9a6b46e76 - lazy_static::lazy::Lazy<T>::get::{{closure}}::h276539bfd03ab2ad
+                               at /home/jizzhao/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-1.4.0/src/inline_lazy.rs:31
+  20:     0x55b9a6f92aab - std::sync::once::Once::call_once::{{closure}}::h47fc9d85d97b3c30
+                               at /rustc/7efe1c6e678a263b9464f2e7f06f552b4d4db5a5/src/libstd/sync/once.rs:225
+  21:     0x55b9a7cd5ad8 - std::sync::once::Once::call_inner::hd271689bf330f5a4
+                               at src/libstd/sync/once.rs:392
+  22:     0x55b9a6f92893 - std::sync::once::Once::call_once::hd1568473ab88eb36
+                               at /rustc/7efe1c6e678a263b9464f2e7f06f552b4d4db5a5/src/libstd/sync/once.rs:225
+  23:     0x55b9a6b36977 - lazy_static::lazy::Lazy<T>::get::hcfd9b1637662bb28
+                               at /home/jizzhao/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-1.4.0/src/inline_lazy.rs:30
+  24:     0x55b9a6b36977 - <labhub::config::CONFIG as core::ops::deref::Deref>::deref::__stability::h8125dc1382149412
+                               at /home/jizzhao/IdeaProjects/labhub/<::lazy_static::__lazy_static_internal macros>:16
+  25:     0x55b9a6b36977 - <labhub::config::CONFIG as core::ops::deref::Deref>::deref::hdb34c50461648044
+                               at /home/jizzhao/IdeaProjects/labhub/<::lazy_static::__lazy_static_internal macros>:18
+  26:     0x55b9a6b35646 - labhub::config::load_config::h0fd48fe996924cd7
+                               at src/config.rs:95
+  27:     0x55b9a6beac62 - labhub::main::h38183eccd9419300
+                               at src/main.rs:33
+  28:     0x55b9a6b87190 - std::rt::lang_start::{{closure}}::he9c3631d7693893a
+                               at /rustc/7efe1c6e678a263b9464f2e7f06f552b4d4db5a5/src/libstd/rt.rs:64
+  29:     0x55b9a7cd8fd3 - std::rt::lang_start_internal::{{closure}}::hd480976cf79d8bdf
+                               at src/libstd/rt.rs:49
+  30:     0x55b9a7cd8fd3 - std::panicking::try::do_call::h518b14fce51bb3c0
+                               at src/libstd/panicking.rs:292
+  31:     0x55b9a7cdde5a - __rust_maybe_catch_panic
+                               at src/libpanic_unwind/lib.rs:80
+  32:     0x55b9a7cd9b5d - std::panicking::try::hb3f4504c46ca3873
+                               at src/libstd/panicking.rs:271
+  33:     0x55b9a7cd9b5d - std::panic::catch_unwind::hd66e9d63a43e9a4a
+                               at src/libstd/panic.rs:394
+  34:     0x55b9a7cd9b5d - std::rt::lang_start_internal::h2cc0442a5a42efd4
+                               at src/libstd/rt.rs:48
+  35:     0x55b9a6b87169 - std::rt::lang_start::heda33ac52becca3b
+                               at /rustc/7efe1c6e678a263b9464f2e7f06f552b4d4db5a5/src/libstd/rt.rs:64
+  36:     0x55b9a6beb24a - main
+  37:     0x7fbc9c7f5b97 - __libc_start_main
+  38:     0x55b9a6b2ed6a - _start
+  39:                0x0 - <unknown>
+➜ debug git:(pdsds-19985) ✗ 
+

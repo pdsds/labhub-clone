@@ -1,0 +1,10 @@
+/target
+**/*.rs.bk
+
+.env
+
+# Ignore IDE files
+.vscode/
+
+# Ignore my helm values.
+myvalues.yaml

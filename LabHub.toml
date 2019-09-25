@@ -1,0 +1,33 @@
+# List of enabled features
+features = [
+    "external_pr",
+    "commands"
+]
+
+# Command settings
+[commands]
+# List of commands to enable
+enabled_commands = [
+    "retry",
+]
+
+# Settings for GitHub
+[github]
+webhook_secret = "5_Tree_Climbing_Tips_From_Johnny_Depp"
+username = "jizzhao"
+ssh_key = "/etc/ssh-keys/labhub/labhub-key.ecdsa"
+api_token = "32577bd7266ca416f487a15fb6229bd1ee7508fc"
+hostname = "wwwin-github.cisco.com"
+
+# Settings for GitLab
+[gitlab]
+webhook_secret = "5_Tree_Climbing_Tips_From_Johnny_Depp"
+username = "jizzhao"
+ssh_key = "/etc/ssh-keys/labhub/labhub-key.ecdsa"
+api_token = "N-pzbDveScQu5cbrEnAz"
+hostname = "gitlab.ciscocrate.com"
+
+# List of mappings to/from GitHub & GitLab
+[[mappings]]
+github_repo = "jizzhao/gitlab-test-1"
+gitlab_repo = "jizzhao/gitlab-test-1"
